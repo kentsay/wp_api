@@ -14,7 +14,8 @@ switch ($argv[1]) {
 		creat_new_post($ch, $url);
 		break;
 	case 'update':
-		update_post($ch, $url);
+    $update_value = $argv[2];
+		update_post($ch, $url, $update_value);
 		break;
 	default:
 		query_post($ch, $url);
@@ -76,11 +77,11 @@ function creat_new_post($ch, $url) {
 	);                                                 
 }
 
-function update_post($ch, $url) {
-	$url = $url . "posts/13/meta/45";
+function update_post($ch, $url, $update_value) {
+	$url = $url . "posts/100/meta/794";
 	$data = array(
-				"key"   => "icontext_aware_sensor_uri",
-				"value" => "15"				
+				"key"   => "numofpeople",
+				"value" => $update_value				
 			);
 	$data_string = json_encode($data);
 	curl_setopt($ch,CURLOPT_URL, $url);
