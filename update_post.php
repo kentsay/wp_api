@@ -14,8 +14,9 @@ switch ($argv[1]) {
 		creat_new_post($ch, $url);
 		break;
 	case 'update':
-    $update_value = $argv[2];
-		update_post($ch, $url, $update_value);
+    $update_meta = $argv[2];
+    $update_value = $argv[3];
+		update_post($ch, $url, $update_meta, $update_value);
 		break;
 	default:
 		query_post($ch, $url);
@@ -77,10 +78,10 @@ function creat_new_post($ch, $url) {
 	);                                                 
 }
 
-function update_post($ch, $url, $update_value) {
-	$url = $url . "posts/100/meta/794";
+function update_post($ch, $url, $update_meta, $update_value) {
+	$url = $url . "posts/120/meta/1221";
 	$data = array(
-				"key"   => "numofpeople",
+				"key"   => $update_meta,
 				"value" => $update_value				
 			);
 	$data_string = json_encode($data);
