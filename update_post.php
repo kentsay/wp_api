@@ -79,7 +79,7 @@ function creat_new_post($ch, $url) {
 }
 
 function update_post($ch, $url, $update_meta, $update_value) {
-	$url = $url . "posts/120/meta/1221";
+	$url = $url . "posts/135/meta/1383";
 	$data = array(
 				"key"   => $update_meta,
 				"value" => $update_value				
